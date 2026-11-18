@@ -1,0 +1,167 @@
+[
+  {
+    "filing": "Email security@ticko.market",
+    "free": true,
+    "gates": [
+      "First report only",
+      "Testnet-only testing — mainnet/production testing disqualifies",
+      "Payout needs KYC/KYB + sanctions screening"
+    ],
+    "id": "ticko",
+    "name": "Ticko",
+    "notes": "Scope: Ticko Mainnet (Beta) + Testnet. Perps on BTC, ETH, XAU, SKHYNIX, QQQ; USDT-only margin.",
+    "platform": "Bug bounty (email filing)",
+    "rewards": "Critical $200,000 · High $25,000 · Medium $3,000 · Others $50",
+    "status": "live",
+    "url": "https://docs.ticko.xyz/resources/ticko-bug-bounty",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Intigriti VDP page",
+    "free": true,
+    "gates": [
+      "$0 VDP — no IDV needed to file",
+      "Latest releases only; Enterprise out of scope"
+    ],
+    "id": "grafana-vdp",
+    "name": "Grafana Labs VDP",
+    "notes": "Scope: grafana/grafana + Loki, Mimir, Tempo, Pyroscope, Grafana Cloud.",
+    "platform": "Intigriti (VDP, $0)",
+    "rewards": "No money — Security Hall of Fame + CVE + path to the invite-only paid VIP program after 3 Medium / 2 High / 1 Exceptional accepted",
+    "status": "live",
+    "url": "https://app.intigriti.com/programs/grafanalabs/grafanalabsvdp/detail",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Bugcrowd submission form",
+    "free": true,
+    "gates": [
+      "One submission in triage at a time (1 of 1 slot)",
+      "Test accounts only, never another real person's account"
+    ],
+    "id": "openai-safety",
+    "name": "OpenAI Safety",
+    "notes": "Safety program, Codex scope: 'Bypassing a required approval' (dangerous-command prompt).",
+    "platform": "Bugcrowd (managed)",
+    "rewards": "Up to $300,000; minimum $500 (program page)",
+    "status": "live",
+    "url": "https://bugcrowd.com/engagements/openai-safety",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Bugcrowd submission form",
+    "free": true,
+    "gates": [
+      "Bugcrowd account + IDV completed",
+      "Free test instance available"
+    ],
+    "id": "atlassian",
+    "name": "Atlassian",
+    "notes": "Scope: Rovo AI + Forge.",
+    "platform": "Bugcrowd",
+    "rewards": "P1 up to $12,000",
+    "status": "live",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "HackerOne submission form",
+    "free": true,
+    "gates": [
+      "Verify the submit gate live from the researcher's HackerOne account before filing"
+    ],
+    "id": "shopify",
+    "name": "Shopify",
+    "notes": "High-value program; the submit gate is unverified.",
+    "platform": "HackerOne",
+    "rewards": "Up to $200,000; minimum $500",
+    "status": "live",
+    "verdict": "CAUTION"
+  },
+  {
+    "filing": "HackerOne (blocked until the signal gate restores)",
+    "free": true,
+    "gates": [
+      "HackerOne Signal Required 1.0",
+      "No trial reports left — restores ~14 Feb 2027"
+    ],
+    "id": "zomato",
+    "name": "Zomato",
+    "notes": "A proven High (CVSS 8.1) MCP OAuth finding exists but cannot be filed yet.",
+    "platform": "HackerOne",
+    "rewards": "Tier 1 High $1,000–$2,000",
+    "status": "live",
+    "verdict": "CAUTION"
+  },
+  {
+    "filing": "HackenProof (gated)",
+    "free": false,
+    "gates": [
+      "Needs more than 50 Reputation (new accounts start at 0)",
+      "$10 submission fee",
+      "KYC required"
+    ],
+    "id": "noirwallet",
+    "name": "NoirWallet",
+    "notes": "A proven testnet finding exists; filing is blocked on reputation + fee + KYC.",
+    "platform": "HackenProof",
+    "rewards": "Per program page",
+    "status": "live",
+    "verdict": "CAUTION"
+  },
+  {
+    "filing": "Intigriti VDP page",
+    "free": true,
+    "gates": [
+      "VDP — no IDV needed to file"
+    ],
+    "id": "personio",
+    "name": "Personio",
+    "notes": "Reviewed 17 Nov 2026: no confirmed findings.",
+    "platform": "Intigriti",
+    "rewards": "No money (VDP)",
+    "status": "live",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Program submission form",
+    "free": true,
+    "gates": [
+      "Testnet only"
+    ],
+    "id": "xe-testnet",
+    "name": "XE Testnet",
+    "notes": "Several reports filed; some closed as duplicates, two Minor reports still new.",
+    "platform": "Bug bounty (testnet)",
+    "rewards": "Per program page",
+    "status": "live",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Email",
+    "free": true,
+    "gates": [
+      "Email filing"
+    ],
+    "id": "vercel",
+    "name": "Vercel",
+    "notes": "Two reports emailed 17 Nov 2026; no human reply yet.",
+    "platform": "Bug bounty (email filing)",
+    "rewards": "Per program page",
+    "status": "live",
+    "verdict": "PASS"
+  },
+  {
+    "filing": "Program submission form",
+    "free": true,
+    "gates": [
+      "Platform filing"
+    ],
+    "id": "sorona",
+    "name": "Sorona",
+    "notes": "Three reports filed 17 Nov 2026; one more draft ready for the next slot.",
+    "platform": "Bug bounty",
+    "rewards": "Per program page",
+    "status": "live",
+    "verdict": "PASS"
+  }
+]

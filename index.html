@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BountyDesk — an open agentic website for security research</title>
+<meta name="description" content="A research desk for independent bug-bounty hunters: program triage, checklists, and a public findings log, with a network of security agents you can talk to in the browser.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="script.js"></script>
+<script type="module" src="site.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1>BountyDesk</h1>
+    <p class="tagline">An open agentic website for security research — a desk where security agents are discoverable, checkable, and callable, by humans and by other agents.</p>
+    <nav aria-label="Sections">
+      <a href="#programs">Programs</a>
+      <a href="#checklists">Checklists</a>
+      <a href="#findings">Findings log</a>
+      <a href="#shortlist-section">My shortlist</a>
+      <a href="#how-it-works">How this site works</a>
+      <a href="#assistant">Ask the desk</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <p>This desk is curated by <strong>Feri Andi</strong> (feriandi02), an independent security researcher. It answers one question for other independent hunters: <em>which bounty programs are live, free, and open to a new researcher — and what gates do they carry?</em> The program table, the checklists, and the findings log below are the desk's real content. The assistant at the bottom of the page is a network of three security agents that answer only from this data and from read-only public sources. It never invents findings, never touches keys, and never runs payloads.</p>
+    <p class="honest-note"><strong>Honest limits:</strong> the agents advise; the human files. Nothing here submits a report, moves funds, or signs anything. Program data is curated by the author and updated by editing this repo — it is not scraped live. The findings log lists closed or out-of-scope findings only, at a high level, with no exploit detail.</p>
+  </section>
+
+  <section id="programs" aria-labelledby="programs-heading">
+    <h2 id="programs-heading">Program triage table</h2>
+    <p><span id="program-count">Loading programs…</span> · Verdicts: <strong>PASS</strong> = live, free, and open to a new researcher; <strong>CAUTION</strong> = a gate stands in the way (fee, reputation minimum, signal requirement, or an unverified gate). Ask the desk's triage agent about any program for the full checklist walk-through.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Program</th><th>Platform</th><th>Status</th><th>Verdict</th><th>Rewards</th><th>Gates</th><th>How to file</th></tr>
+        </thead>
+        <tbody id="program-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="checklists" aria-labelledby="checklists-heading">
+    <h2 id="checklists-heading">Checklist library</h2>
+    <p>The checklists the agents use. They are the same lists the author uses before filing anything.</p>
+    <div id="checklist-list" class="card-grid"></div>
+  </section>
+
+  <section id="findings" aria-labelledby="findings-heading">
+    <h2 id="findings-heading">Findings log</h2>
+    <p>Closed or out-of-scope findings from the author's own research, kept at a high level — outcome and lesson, no exploit detail. Nothing in triage and nothing unfiled is listed here.</p>
+    <div id="finding-list" class="card-grid"></div>
+  </section>
+
+  <section id="shortlist-section" aria-labelledby="shortlist-heading">
+    <h2 id="shortlist-heading">My shortlist</h2>
+    <p>Your own triage notes live only in <strong>your browser</strong> (localStorage). Nothing leaves this page, and there is no account. Ask the assistant to save a note, or delete one here.</p>
+    <p id="shortlist-empty">No notes yet. Try asking the assistant: “Save a triage note for the Ticko program: email filing, testnet-only, rewards up to $200,000.”</p>
+    <ul id="shortlist"></ul>
+  </section>
+
+  <section id="how-it-works" aria-labelledby="how-heading">
+    <h2 id="how-heading">How this site works</h2>
+    <p>BountyDesk is an <strong>open agentic website</strong>: it publishes machine-readable information about its agent network, and any visitor — human or agent — can discover and call it.</p>
+    <ul>
+      <li><strong>Manifest:</strong> <a href="agent-manifest.json">agent-manifest.json</a> (also at <a href=".well-known/awww.json">.well-known/awww.json</a>) lists the network <code>bounty_desk</code>, its front agent <code>bounty_desk_coordinator</code>, and the network definition <a href="bounty_desk.network.json">bounty_desk.network.json</a>.</li>
+      <li><strong>Agents:</strong> a coordinator that routes questions, a <em>triage specialist</em> (program triage), and a <em>PoC specialist</em> (PoC verification). The network runs entirely in your browser.</li>
+      <li><strong>Your key, your provider:</strong> the assistant uses the AI provider key you enter in the settings below (bring your own key). Your key stays in your browser and is sent only to the provider you choose. You can also connect with OpenRouter for a free model in one click.</li>
+      <li><strong>Trust before delegation:</strong> before this desk asks another agent site anything, it first asks <a href="https://agent-atlas-phi.vercel.app/">Agent Atlas</a> — an independent directory and trust checker — to check that site. You see a consent card (origin + purpose) and approve or decline first. The peer never receives your key.</li>
+      <li><strong>What the desk cannot do:</strong> submit reports, move funds, sign anything, run payloads, or check a contract live on-chain (the contract-audit agent is a later milestone). The agents say so plainly when asked.</li>
+      <li><strong>Open source:</strong> this site is a static site (HTML + CSS + vanilla JavaScript) in a public GitHub repository, built for the Open Agentic Web Challenge. The agent network, its instructions, and the site actions are all public and auditable.</li>
+    </ul>
+  </section>
+
+  <section id="assistant" class="assistant" aria-labelledby="assistant-heading">
+    <h2 id="assistant-heading">Ask BountyDesk</h2>
+    <p>The desk's agents can triage a program, check whether a PoC proves a finding, and keep your shortlist — all from this desk's own data.</p>
+    <p class="assistant-note">Your messages and this page's data go to the LLM provider you choose in the settings below. You confirm anything that cannot be undone before it happens.</p>
+    <p id="assistant-status" role="status">Connecting the assistant… If this message stays, the assistant could not load. You can still use the page directly.</p>
+    <div id="agent-app">
+      <div data-ns-slot="header"></div>
+      <div class="assistant-panels">
+        <div data-ns-slot="chat"></div>
+        <div data-ns-slot="agents"></div>
+      </div>
+      <div data-ns-slot="settings"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>BountyDesk — an open agentic website for security research. Built for the <a href="https://cognizant-agenticweb.devpost.com/">Open Agentic Web Challenge</a> by Feri Andi (feriandi02). The agent network runs in your browser on your own key; nothing on this page is a server, an account, or a custodian of your keys.</p>
+  </div>
+</footer>
+</body>
+</html>
